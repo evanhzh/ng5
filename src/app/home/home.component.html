@@ -17,6 +17,7 @@
     </form>
   </div>
   <div class="col">
+    <p class="sm">Click on goal to delete</p>
     <p class="todo-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
       {{ goal }}
     </p>
