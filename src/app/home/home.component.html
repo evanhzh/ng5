@@ -1,0 +1,24 @@
+<div class="container color-dark">
+  <div class="col">
+    <p>Add a To-Do</p>
+  </div>
+  <div class="col">
+    <p>My To-do List ({{ itemCount }})</p>
+  </div>
+</div>
+<div class="container color-light" [@goals]="goals.length">
+  <div class="col">
+    <p class="sm">What do I want to achieve?</p>
+    <form>
+      <input type="text" class="txt" name="item" placeholder="Goal..." [(ngModel)]="goalText">
+      <br>
+      <!-- <span>{{goalText}}</span> //to display typed item-->
+      <input type="submit" class="btn" [value]="btnText" (click)="addItem()">
+    </form>
+  </div>
+  <div class="col">
+    <p class="todo-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
+      {{ goal }}
+    </p>
+  </div>
+</div>
